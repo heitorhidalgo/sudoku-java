@@ -26,4 +26,8 @@ public class Space {
     public boolean isFixed() {
         return fixed;
     }
+
+	public void clearActual() {
+		
+	}
 }
