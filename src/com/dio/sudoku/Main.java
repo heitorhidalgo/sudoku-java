@@ -81,10 +81,14 @@ public class Main {
 					var c = Integer.parseInt(values[1]);
 					var v = Integer.parseInt(values[2]);
 
-					if (board.changeValue(r, c, v)) {
+					if (board.changeValue(c, r, v)) {
 						board.show();
+						if (board.gameIsFinished()) {
+				            System.out.printf("Parabéns! Você completou o Sudoku!%n");
+				            return;
+				        }	
 					} else {
-						System.out.printf("A posição [%s,%s] é fixa!%n", r, c);
+						System.out.printf("A jogada em [%s,%s] é inválida! (Posição fixa ou valor já existente)%n", r, c);
 					}
 				} catch (Exception e) {
 					System.out.println("Entrada inválida! Use o formato: 0,0,5");
